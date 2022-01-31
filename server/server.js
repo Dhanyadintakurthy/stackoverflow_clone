@@ -21,7 +21,7 @@ app.use('/questions', QuestionRouter)
 const PORT = (process.env.PORT || 5000);
 server.listen(PORT, () => console.log(`Server has started on port ${PORT}`))
 
-const URI = (process.env.MONGO_URL || "mongodb+srv://stackoverflow:stackoverflow@cluster0.5vqmt.mongodb.net/stackoverflow?retryWrites=true&w=majority");
+const URI = process.env.MONGO_URL;
 mongoose.connect(URI, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 const connection = mongoose.connection;
 connection.once('open', () => {
