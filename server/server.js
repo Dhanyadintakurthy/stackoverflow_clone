@@ -18,10 +18,10 @@ const QuestionRouter = require('./Router/question.router');
 app.use('/users', UserRouter);
 app.use('/questions', QuestionRouter)
 
-const PORT = (process.env.PORT || 5000);
+const PORT = (process.env.PORT || 5001,5000);
 server.listen(PORT, () => console.log(`Server has started on port ${PORT}`))
 
-const URI = process.env.MONGO_URL;
+const URI = (process.env.MONGO_URL || "mongodb+srv://stackoverflow:stackoverflow@cluster0.5vqmt.mongodb.net/stackoverflow?retryWrites=true&w=majority");
 mongoose.connect(URI, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 const connection = mongoose.connection;
 connection.once('open', () => {
