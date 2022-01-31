@@ -18,7 +18,7 @@ const QuestionRouter = require('./Router/question.router');
 app.use('/users', UserRouter);
 app.use('/questions', QuestionRouter)
 
-const PORT = process.env.PORT;
+const PORT = (process.env.PORT || 5000);
 server.listen(PORT, () => console.log(`Server has started on port ${PORT}`))
 
 const URI = process.env.MONGO_URL;
